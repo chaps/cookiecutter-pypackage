@@ -61,7 +61,10 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+{%- if cookiecutter.open_source_license %}
+    license="{{ cookiecutter.open_source_license }}",
+{%- endif %}
+    url='{{ cookiecutter.repo_url }}',
     version='{{ cookiecutter.version }}',
     zip_safe=False,
 )
